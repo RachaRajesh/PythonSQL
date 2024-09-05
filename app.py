@@ -8,10 +8,19 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS users
 # Insert a record
 cursor.execute("INSERT INTO users (name, age) VALUES (?, ?)", ('Alice',
 30))
+
+# Update Alice's age to 20
+git add .
+git commit -m "Initial setup with Python and SQLite example"
+git push origin main
+
 # Commit the changes
 conn.commit()
 # Query the database
 cursor.execute("SELECT * FROM users")
+
+
+
 rows = cursor.fetchall()
 for row in rows:
     print(row)
